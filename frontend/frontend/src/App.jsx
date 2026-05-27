@@ -13,7 +13,7 @@ import ResumeFeedback from "./components/ResumeFeedback";
 import CareerPaths from "./components/CareerPaths";
 import downloadReport from "./utils/generatePDFReport";
 import { TypeAnimation } from "react-type-animation";
-import ParticlesBackground from "./components/ParticlesBackground";
+
 
 import {
   Chart as ChartJS,
@@ -448,7 +448,7 @@ if (loading) {
   return (
 
   <div className={`${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"} min-h-screen transition-all duration-500 relative`}>
-    <ParticlesBackground />
+    
 
     {/* Navbar */}
     <nav className={`${darkMode ? "bg-gray-800 text-white" : "bg-white text-black"} shadow-md px-8 py-4 flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-500`}>
@@ -645,14 +645,14 @@ if (loading) {
 </div>
 
     {/* Main Content */}
-    <div className="flex flex-col items-center p-6">
+<div className="flex flex-col items-center p-6">
 
       <h1 className="text-3xl md:text-5xl font-bold text-blue-600 mb-10">
         AI Resume Analyzer
       </h1>
 
 
-<div
+  <div
   className={`${
     darkMode
       ? "bg-gray-800 text-white"
