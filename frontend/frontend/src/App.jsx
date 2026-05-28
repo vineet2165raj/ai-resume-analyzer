@@ -251,7 +251,7 @@ useEffect(() => {
 
       // Job roles
       const rolesResponse = await fetch(
-        "http://127.0.0.1:8000/job-roles"
+        "https://ai-resume-analyzer-djc3.onrender.com/job-roles"
       );
 
       const rolesData = await rolesResponse.json();
@@ -260,7 +260,7 @@ useEffect(() => {
 
       // Top skills
       const skillsResponse = await fetch(
-        "http://127.0.0.1:8000/top-skills"
+        "https://ai-resume-analyzer-djc3.onrender.com/top-skills"
       );
 
       const skillsData = await skillsResponse.json();
@@ -272,7 +272,7 @@ useEffect(() => {
 
       // Top hiring roles
       const topRolesResponse = await fetch(
-        "http://127.0.0.1:8000/top-roles"
+        "https://ai-resume-analyzer-djc3.onrender.com/top-roles"
       );
 
       const topRolesData = await topRolesResponse.json();
@@ -283,7 +283,7 @@ useEffect(() => {
       });
       
       const trendsResponse = await fetch(
-  "http://127.0.0.1:8000/job-trends"
+  "https://ai-resume-analyzer-djc3.onrender.com/job-trends"
 );
 
 const trendsData = await trendsResponse.json();
@@ -294,7 +294,7 @@ setJobTrendsData({
 });
 
 const salaryResponse = await fetch(
-  "http://127.0.0.1:8000/salary-insights"
+  "https://ai-resume-analyzer-djc3.onrender.com/salary-insights"
 );
 
 const salaryResult = await salaryResponse.json();
@@ -362,7 +362,7 @@ setSalaryData({
   try {
 
     const response = await fetch(
-      "http://127.0.0.1:8000/upload",
+      "https://ai-resume-analyzer-djc3.onrender.com/upload",
       {
         method: "POST",
         body: formData,
