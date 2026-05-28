@@ -14,6 +14,8 @@ import CareerPaths from "./components/CareerPaths";
 import downloadReport from "./utils/generatePDFReport";
 import { TypeAnimation } from "react-type-animation";
 
+
+const API_URL = import.meta.env.VITE_API_URL;
 const API_URL = "https://ai-resume-analyzer-djc3.onrender.com";
 const rolesResponse = await fetch(`${API_URL}/job-roles`);
 const skillsResponse = await fetch(`${API_URL}/top-skills`);
@@ -247,7 +249,7 @@ const salaryChartData = {
   ],
 };
 //
-
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 
 
 useEffect(() => {
@@ -258,7 +260,7 @@ useEffect(() => {
 
       // Job roles
       const rolesResponse = await fetch(
-        "https://ai-resume-analyzer-djc3.onrender.com/job-roles"
+        `${API_URL}/job-roles`
       );
 
       const rolesData = await rolesResponse.json();
@@ -267,8 +269,8 @@ useEffect(() => {
 
       // Top skills
       const skillsResponse = await fetch(
-        "https://ai-resume-analyzer-djc3.onrender.com/top-skills"
-      );
+      `${API_URL}/top-skills`
+        );
 
       const skillsData = await skillsResponse.json();
 
@@ -279,7 +281,7 @@ useEffect(() => {
 
       // Top hiring roles
       const topRolesResponse = await fetch(
-        "https://ai-resume-analyzer-djc3.onrender.com/top-roles"
+        `${API_URL}/top-roles`
       );
 
       const topRolesData = await topRolesResponse.json();
@@ -290,7 +292,7 @@ useEffect(() => {
       });
       
       const trendsResponse = await fetch(
-  "https://ai-resume-analyzer-djc3.onrender.com/job-trends"
+  `${API_URL}/job-trends`
 );
 
 const trendsData = await trendsResponse.json();
@@ -301,7 +303,7 @@ setJobTrendsData({
 });
 
 const salaryResponse = await fetch(
-  "https://ai-resume-analyzer-djc3.onrender.com/salary-insights"
+  `${API_URL}/salary-insights `
 );
 
 const salaryResult = await salaryResponse.json();
@@ -369,7 +371,7 @@ setSalaryData({
   try {
 
     const response = await fetch(
-      "https://ai-resume-analyzer-djc3.onrender.com/upload",
+      `${API_URL}/upload`,
       {
         method: "POST",
         body: formData,
