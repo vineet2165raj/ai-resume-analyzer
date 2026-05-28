@@ -14,6 +14,13 @@ import CareerPaths from "./components/CareerPaths";
 import downloadReport from "./utils/generatePDFReport";
 import { TypeAnimation } from "react-type-animation";
 
+const API_URL = "https://ai-resume-analyzer-djc3.onrender.com";
+const rolesResponse = await fetch(`${API_URL}/job-roles`);
+const skillsResponse = await fetch(`${API_URL}/top-skills`);
+const response = await fetch(`${API_URL}/upload`, {
+  method: "POST",
+  body: formData,
+});
 
 import {
   Chart as ChartJS,
