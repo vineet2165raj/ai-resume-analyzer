@@ -13,6 +13,7 @@ import shutil
 import os
 from learning_roadmap import generate_learning_roadmap
 from resume_feedback import generate_resume_feedback
+from fastapi.middleware.cors import CORSMiddleware
 from resume_parser import (
     extract_text_from_pdf,
     extract_text_from_docx
@@ -36,6 +37,14 @@ from skill_extractor import extract_skills
 from ats_score import calculate_ats_score
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Enable CORS
 app.add_middleware(
